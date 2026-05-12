@@ -6,5 +6,7 @@ namespace Linq_Exc
 {
     internal class Student
     {
+        public  string Name { get; set; }
+        public int Age { get; set; }
     }
 }
