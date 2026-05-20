@@ -175,20 +175,31 @@
 
             #region 11- Contains
 
-            List<string> PL = new()
-            {
-                "csharp", "linq", "sql"
-            };
+            //List<string> PL = new()
+            //{
+            //    "csharp", "linq", "sql"
+            //};
 
-            var res = PL.Contains("linq");
-            Console.WriteLine(res);
+            //var res = PL.Contains("linq");
+            //Console.WriteLine(res);
             #endregion
 
             #region 12- Skip
 
-            List<int> numbers = new List<int>() { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
+            List<int> numbers = new List<int>() { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
 
             var result = numbers.Skip(3);
+
+            foreach (var r in result)
+            {
+                Console.WriteLine(r);
+            }
+            #endregion
+
+            #region 13- Take
+
+           
+
             #endregion
 
         }
