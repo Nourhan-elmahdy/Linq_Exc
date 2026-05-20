@@ -223,16 +223,31 @@
 
             #region 15- Sum
 
-            List<int> numbers = new List<int>()
+            //List<int> numbers = new List<int>()
+            //    {
+            //        10,
+            //        20,
+            //        30
+            //    };
+
+            //var total = numbers.Sum();
+
+            //Console.WriteLine(total);
+
+            #endregion
+
+            #region 16- Average
+
+            List<int> grades = new List<int>()
                 {
-                    10,
-                    20,
-                    30
+                    80,
+                    90,
+                    70
                 };
 
-            var total = numbers.Sum();
+            double average = grades.Average();
 
-            Console.WriteLine(total);
+            Console.WriteLine(average);
 
             #endregion
         }
