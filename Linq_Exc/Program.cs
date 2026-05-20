@@ -166,11 +166,29 @@
 
             #region 10- All
 
-            List<int> Ages = new() { 13, 20, 23, 34, 43, 55 };
+            //List<int> Ages = new() { 13, 20, 23, 34, 43, 55 };
 
-            var res = Ages.All(a => a >= 18);
+            //var res = Ages.All(a => a >= 18);
 
+            //Console.WriteLine(res);
+            #endregion
+
+            #region 11- Contains
+
+            List<string> PL = new()
+            {
+                "csharp", "linq", "sql"
+            };
+
+            var res = PL.Contains("linq");
             Console.WriteLine(res);
+            #endregion
+
+            #region 12- Skip
+
+            List<int> numbers = new List<int>() { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
+
+            var result = numbers.Skip(3);
             #endregion
 
         }
