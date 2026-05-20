@@ -269,17 +269,41 @@
 
             #region 18- Min
 
-            List<int> prices = new List<int>()
-                {
-                    100,
-                    250,
-                    80,
-                    500
-                };
+            //List<int> prices = new List<int>()
+            //    {
+            //        100,
+            //        250,
+            //        80,
+            //        500
+            //    };
 
-            int minPrice = prices.Min();
+            //int minPrice = prices.Min();
 
-            Console.WriteLine(minPrice);
+            //Console.WriteLine(minPrice);
+
+            #endregion
+
+            #region 19- Select
+
+            List<Employees> employees = new();
+
+            Employees e1 = new();
+            e1.FName = "Ahmed";
+            e1.LName = "Ali";
+
+            Employees e2 = new();
+            e2.FName = "Noura";
+            e2.LName = "Ahmed";
+
+            employees.Add(e1);
+            employees.Add(e2);
+
+            var res = employees.Select(e => $"{e.FName} {e.LName}" );
+
+            foreach (var r in res)
+            {
+                Console.WriteLine(r);
+            }
 
             #endregion
         }

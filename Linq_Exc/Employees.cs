@@ -6,7 +6,10 @@ namespace Linq_Exc
 {
     internal class Employees
     {
-        public int Id { get; set; }
-        public string Name { get; set; }
+        //public int Id { get; set; }
+        //public string Name { get; set; }
+
+        public string FName { get; set; }
+        public string LName { get; set; }
     }
 }
