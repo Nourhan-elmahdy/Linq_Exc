@@ -253,6 +253,22 @@
 
             #region 17- Max
 
+            //List<int> prices = new List<int>()
+            //    {
+            //        100,
+            //        250,
+            //        80,
+            //        500
+            //    };
+
+            //int maxPrice = prices.Max();
+
+            //Console.WriteLine(maxPrice);
+
+            #endregion
+
+            #region 18- Min
+
             List<int> prices = new List<int>()
                 {
                     100,
@@ -261,9 +277,9 @@
                     500
                 };
 
-            int maxPrice = prices.Max();
+            int minPrice = prices.Min();
 
-            Console.WriteLine(maxPrice);
+            Console.WriteLine(minPrice);
 
             #endregion
         }
