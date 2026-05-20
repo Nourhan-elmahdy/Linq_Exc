@@ -238,16 +238,32 @@
 
             #region 16- Average
 
-            List<int> grades = new List<int>()
+            //List<int> grades = new List<int>()
+            //    {
+            //        80,
+            //        90,
+            //        70
+            //    };
+
+            //double average = grades.Average();
+
+            //Console.WriteLine(average);
+
+            #endregion
+
+            #region 17- Max
+
+            List<int> prices = new List<int>()
                 {
+                    100,
+                    250,
                     80,
-                    90,
-                    70
+                    500
                 };
 
-            double average = grades.Average();
+            int maxPrice = prices.Max();
 
-            Console.WriteLine(average);
+            Console.WriteLine(maxPrice);
 
             #endregion
         }
