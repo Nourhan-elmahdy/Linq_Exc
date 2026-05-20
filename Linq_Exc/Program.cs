@@ -209,17 +209,32 @@
 
             #region 14- Distinct
 
-            List<string> cities = new() {"Cairo",  "Alexandria",  "Giza", "Dubai" };
+            //List<string> cities = new() {"Cairo",  "Alexandria",  "Giza", "Dubai" };
 
-            var res = cities.Distinct();
+            //var res = cities.Distinct();
 
-            foreach (var c in cities)
-            {
-                Console.WriteLine(c);
-            }
+            //foreach (var c in cities)
+            //{
+            //    Console.WriteLine(c);
+            //}
 
             #endregion
 
+
+            #region 15- Sum
+
+            List<int> numbers = new List<int>()
+                {
+                    10,
+                    20,
+                    30
+                };
+
+            var total = numbers.Sum();
+
+            Console.WriteLine(total);
+
+            #endregion
         }
     }
 }
