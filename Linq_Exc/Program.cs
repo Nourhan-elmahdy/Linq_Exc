@@ -186,20 +186,25 @@
 
             #region 12- Skip
 
-            List<int> numbers = new List<int>() { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
+            //List<int> numbers = new List<int>() { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
 
-            var result = numbers.Skip(3);
+            //var result = numbers.Skip(3);
             
-            foreach (var r in result)
-            {
-                Console.WriteLine(r);
-            }
+            //foreach (var r in result)
+            //{
+            //    Console.WriteLine(r);
+            //}
             #endregion
 
             #region 13- Take
+            List<int> numbers = new List<int>() { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
 
-           
+            var res = numbers.Take(5);
 
+            foreach (var r in res)
+            {
+               Console.WriteLine($"{r}");
+            }
             #endregion
 
         }
