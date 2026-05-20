@@ -189,7 +189,7 @@
             //List<int> numbers = new List<int>() { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
 
             //var result = numbers.Skip(3);
-            
+
             //foreach (var r in result)
             //{
             //    Console.WriteLine(r);
@@ -197,14 +197,27 @@
             #endregion
 
             #region 13- Take
-            List<int> numbers = new List<int>() { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
+            //List<int> numbers = new List<int>() { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
 
-            var res = numbers.Take(5);
+            //var res = numbers.Take(5);
 
-            foreach (var r in res)
+            //foreach (var r in res)
+            //{
+            //   Console.WriteLine($"{r}");
+            //}
+            #endregion
+
+            #region 14- Distinct
+
+            List<string> cities = new() {"Cairo",  "Alexandria",  "Giza", "Dubai" };
+
+            var res = cities.Distinct();
+
+            foreach (var c in cities)
             {
-               Console.WriteLine($"{r}");
+                Console.WriteLine(c);
             }
+
             #endregion
 
         }
