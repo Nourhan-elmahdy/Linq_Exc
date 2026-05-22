@@ -285,26 +285,49 @@
 
             #region 19- Select
 
-            List<Employees> employees = new();
+            //List<Employees> employees = new();
 
-            Employees e1 = new();
-            e1.FName = "Ahmed";
-            e1.LName = "Ali";
+            //Employees e1 = new();
+            //e1.FName = "Ahmed";
+            //e1.LName = "Ali";
 
-            Employees e2 = new();
-            e2.FName = "Noura";
-            e2.LName = "Ahmed";
+            //Employees e2 = new();
+            //e2.FName = "Noura";
+            //e2.LName = "Ahmed";
 
-            employees.Add(e1);
-            employees.Add(e2);
+            //employees.Add(e1);
+            //employees.Add(e2);
 
-            var res = employees.Select(e => $"{e.FName} {e.LName}" );
+            //var res = employees.Select(e => $"{e.FName} {e.LName}" );
 
-            foreach (var r in res)
+            //foreach (var r in res)
+            //{
+            //    Console.WriteLine(r);
+            //}
+
+            #endregion
+
+            #region 20- where + select
+
+            List<Products> products = new();
+
+            Products p1 = new();
+            p1.Name = "Lip balm";
+            p1.Stock = 0;
+
+            products.Add(p1);
+
+            Products p2 = new();
+            p2.Name = "Hand Cream";
+            p2.Stock = 5;
+
+            products.Add(p2);
+
+            var res = products.Where(p=>p.Stock ==0 ).Select(p=> p.Name);
+            foreach (string p in res)
             {
-                Console.WriteLine(r);
+                Console.WriteLine($"{p} is out of stock");
             }
-
             #endregion
         }
     }
