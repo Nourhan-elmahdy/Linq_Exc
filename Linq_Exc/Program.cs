@@ -309,24 +309,66 @@
 
             #region 20- where + select
 
-            List<Products> products = new();
+            //List<Products> products = new();
 
-            Products p1 = new();
-            p1.Name = "Lip balm";
-            p1.Stock = 0;
+            //Products p1 = new();
+            //p1.Name = "Lip balm";
+            //p1.Stock = 0;
 
-            products.Add(p1);
+            //products.Add(p1);
 
-            Products p2 = new();
-            p2.Name = "Hand Cream";
-            p2.Stock = 5;
+            //Products p2 = new();
+            //p2.Name = "Hand Cream";
+            //p2.Stock = 5;
 
-            products.Add(p2);
+            //products.Add(p2);
 
-            var res = products.Where(p=>p.Stock ==0 ).Select(p=> p.Name);
-            foreach (string p in res)
+            //var res = products.Where(p=>p.Stock ==0 ).Select(p=> p.Name);
+            //foreach (string p in res)
+            //{
+            //    Console.WriteLine($"{p} is out of stock");
+            //}
+            #endregion
+
+            #region First
+
+            //List<int> numbers = new() { 18, 2, 43, 65, 48, 97, 100};
+
+            //var res = numbers.First(n => n > 50);
+
+            //Console.WriteLine(res);
+
+            #endregion
+
+            #region where + OrderBy
+
+            List<Customers> customers = new();
+
+            Customers c1 = new();
+            c1.Name = "Mohamed";
+            c1.Country = "Egypt";
+            c1.JoinDate = new DateTime(2024, 5, 22);
+
+            Customers c2 = new();
+            c2.Name = "Mohey";
+            c2.Country = "Egypt";
+            c2.JoinDate = new DateTime(2022, 6, 13);
+
+            Customers c3 = new();
+            c3.Name = " Mark ";
+            c3.Country = "America";
+            c3.JoinDate = new DateTime(2025, 9, 10);
+
+
+            customers .Add(c1);
+            customers .Add(c2);
+            customers .Add(c3);
+
+            var res = customers.Where(c => c.Country == "Egypt").OrderByDescending(c => c.JoinDate);
+
+            foreach(Customers c in res)
             {
-                Console.WriteLine($"{p} is out of stock");
+                Console.WriteLine(c.Name);
             }
             #endregion
         }
