@@ -220,7 +220,6 @@
 
             #endregion
 
-
             #region 15- Sum
 
             //List<int> numbers = new List<int>()
@@ -330,7 +329,7 @@
             //}
             #endregion
 
-            #region First
+            #region 21- First
 
             //List<int> numbers = new() { 18, 2, 43, 65, 48, 97, 100};
 
@@ -340,36 +339,124 @@
 
             #endregion
 
-            #region where + OrderBy
+            #region 22- where + OrderBy
 
-            List<Customers> customers = new();
+            //List<Customers> customers = new();
 
-            Customers c1 = new();
-            c1.Name = "Mohamed";
-            c1.Country = "Egypt";
-            c1.JoinDate = new DateTime(2024, 5, 22);
+            //Customers c1 = new();
+            //c1.Name = "Mohamed";
+            //c1.Country = "Egypt";
+            //c1.JoinDate = new DateTime(2024, 5, 22);
 
-            Customers c2 = new();
-            c2.Name = "Mohey";
-            c2.Country = "Egypt";
-            c2.JoinDate = new DateTime(2022, 6, 13);
+            //Customers c2 = new();
+            //c2.Name = "Mohey";
+            //c2.Country = "Egypt";
+            //c2.JoinDate = new DateTime(2022, 6, 13);
 
-            Customers c3 = new();
-            c3.Name = " Mark ";
-            c3.Country = "America";
-            c3.JoinDate = new DateTime(2025, 9, 10);
+            //Customers c3 = new();
+            //c3.Name = " Mark ";
+            //c3.Country = "America";
+            //c3.JoinDate = new DateTime(2025, 9, 10);
 
 
-            customers .Add(c1);
-            customers .Add(c2);
-            customers .Add(c3);
+            //customers .Add(c1);
+            //customers .Add(c2);
+            //customers .Add(c3);
 
-            var res = customers.Where(c => c.Country == "Egypt").OrderByDescending(c => c.JoinDate);
+            //var res = customers.Where(c => c.Country == "Egypt").OrderByDescending(c => c.JoinDate);
 
-            foreach(Customers c in res)
+            //foreach(Customers c in res)
+            //{
+            //    Console.WriteLine(c.Name);
+            //}
+            #endregion
+
+            #region 23- GroupBy
+
+
+            List<Customers> customers = new()
             {
-                Console.WriteLine(c.Name);
+                new Customers {CustomerId = 1, SpentByOrder = 150},
+                new Customers {CustomerId = 1, SpentByOrder = 200},
+                new Customers {CustomerId = 3, SpentByOrder = 250}
+            };
+
+            var result = customers.GroupBy(c => c.CustomerId).Select(group => new
+            {
+                CustomerId = group.Key,
+                TotalSpent = group.Sum(o => o.SpentByOrder)
+            });
+
+            foreach (var i in result)
+            {
+                Console.WriteLine($"CustomerId: {i.CustomerId}");
+                Console.WriteLine($"TotalSpent: {i.TotalSpent}");
             }
+            #endregion
+
+            #region 24- GroupBy
+
+            List<Student> students = new()
+            {
+                new Student { Department = "IT", Grade = 89 },
+                new Student { Department = "CS", Grade = 74.5 },
+                new Student {Department = "IT", Grade = 77},
+                new Student {Department = "CS", Grade = 67}
+            };
+
+            var result = students.GroupBy(s => s.Department).Select(g => new
+            {
+                Department = g.Key,
+                Avg = g.Average(s => s.Grade)
+            });
+
+            foreach (var i in result)
+            {
+                Console.WriteLine($"Department: {i.Department}");
+                Console.WriteLine($"Averge Score per Department: {i.Avg}");
+            }
+
+
+            #endregion
+
+            #region 25- Join
+
+            List<Employees> employees = new()
+            {
+                //نسأل نفسنا مين بيتكرر أكتر ونحط فيه ال foriegn key
+
+                new Employees {Name ="Ahmed", DeptId=3},
+                new Employees {Name = "Mohamed", DeptId = 5},
+                new Employees {Name= "Amir", DeptId=8}
+
+            };
+
+            List<Department> departments = new()
+            {
+                new Department { DeptName="HR", DeptId=5},
+                new Department {DeptName="IT", DeptId=3},
+                new Department {DeptName="HR", DeptId=8}
+
+            };
+
+            var result = employees.Join(
+
+                departments,
+                e => e.DeptId,
+                d => d.DeptId,
+                (e, d) => new
+                {
+                    e.Name,
+                    d.DeptName
+                }
+                );
+
+            foreach (var r in result)
+            {
+                Console.WriteLine(r); // الأفضل نكتب r.DeptName, r.EmpName
+            }
+
+
             #endregion
         }
     }
